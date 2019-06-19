@@ -26,8 +26,11 @@
 
         <% if user_signed_in? %>
           <ul>
-            <li><%= link_to 'Orders', orders_path %></li>
-            <li><%= link_to 'Products', products_path %></li>
+            <% if current_user.role_user == 'admin' %>
+              <li><%= link_to 'Orders', orders_path %></li>
+              <li><%= link_to 'Products', products_path %></li>
+            <% end %>
+            <li><%= link_to 'Profile', edit_user_registration_path %></li>
             <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
           </ul>
         <% else %>
@@ -38,7 +41,6 @@
         <% end %>
       </div>
       <div id="main">
-        <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
       </div>

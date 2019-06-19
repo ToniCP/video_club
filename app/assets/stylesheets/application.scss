@@ -19,11 +19,11 @@
   #banner {
     position: relative;
     min-height: 40px;
-    background: #000000; //columna horizontal
+    background: #000000;
     padding: 10px;
     border-bottom: 2px solid;
     font: small-caps 40px/40px "Times New Roman", serif;
-    color: #870000; //linea horizontal
+    color: #870000;
     text-align: center;
 
     img {
@@ -59,7 +59,7 @@
 
     #side {
       padding: 1em 2em;
-      background: #C50808; //columna vertical
+      background: #C50808;
 
       form, div {
         display: inline;
@@ -134,21 +134,3 @@
       }
     }
   }
-
- /*
-  @media all and (max-width: 800px) {
-    #columns {
-      flex-direction: column-reverse;
-    }
-  }
-
-  @media all and (max-width: 500px) {
-    #banner {
-      height: 1em;
-    }
-
-    #banner .title {
-      display: none;
-    }
-  }
- */
