@@ -2,12 +2,8 @@
 
 one:
   name: MyString
-  address: MyText
-  email: MyString
-  pay_type: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
 
 two:
   name: MyString
-  address: MyText
-  email: MyString
-  pay_type: MyString
+  password_digest: <%= BCrypt::Password.create('secret') %>
