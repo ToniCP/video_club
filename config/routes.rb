@@ -8,11 +8,13 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
-  resources :orders
   resources :line_items
   resources :carts
+  resources :orders
 
   root 'store#index', as: 'store_index'
 
-  resources :products
+  resources :products do
+    resources :comments
+  end
 end

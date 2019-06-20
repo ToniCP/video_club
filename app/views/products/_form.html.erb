@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, id: :product_date %>
+  </div>
+
+  <div class="field">
     <%= form.label :price %>
     <%= form.number_field :price, id: :product_price, step: :any %>
   </div>

@@ -1,24 +1,28 @@
 <p id="notice"><%= notice %></p>
+<div class="picture">
+  <%= image_tag(@product.image_url) %>
+  <h2>
+    <strong>Title:</strong>
+    <%= @product.title %>
+  </h2>
+  <h2>
+    <strong>Date:</strong>
+    <%= @product.date %>
+  </h2>
+  <h2>
+    <strong>Price:</strong>
+    <%= number_to_currency(@product.price) %>
+  </h2>
+  <h2>
+    <strong>Description:</strong>
+    <%= @product.description %>
+  </h2>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<h2>Comments</h2>
+<%= render @product.comments %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<% if user_signed_in?%>
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<% end %>
