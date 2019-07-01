@@ -1,6 +1,5 @@
 class LineItem
   include Mongoid::Document
-  field :order_id, type: Integer
 
   belongs_to :order, optional: true
   belongs_to :product, optional: true

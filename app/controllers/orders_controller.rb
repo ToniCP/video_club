@@ -28,14 +28,15 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+    byebug
     @order = Order.new(order_params)
-    @order.add_line_items_from_cart(@cart)
+    #@order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
       if @order.save
-        Cart.destroy(session[:cart_id])
+        #Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        OrderMailer.received(@order).deliver_later
+        #OrderMailer.received(@order).deliver_later
         format.html { redirect_to store_index_url,
           notice: 'Thank you for your order.' }
         format.json { render :show, status: :created, location: @order }

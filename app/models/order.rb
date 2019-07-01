@@ -4,6 +4,7 @@ class Order
   field :address, type: String
   field :email, type: String
   field :pay_type, type: String
+  field :items, type: String
 
   PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
 

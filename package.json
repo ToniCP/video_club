@@ -1,5 +1,7 @@
 {
   "name": "video_club",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "factory-girl": "^5.0.4"
+  }
 }
