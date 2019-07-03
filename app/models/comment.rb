@@ -4,4 +4,6 @@ class Comment
   field :body, type: String
 
   belongs_to :product
+
+  validates :commenter, :body, presence: true
 end

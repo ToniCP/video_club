@@ -34,13 +34,15 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'mongoid', '~> 7.0'
+gem 'mongoid', '~> 6.0'
 gem 'devise', git: 'git://github.com/plataformatec/devise.git'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -48,11 +50,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_girl_rails'
-  gem 'rspec-rails'
-  gem 'ffaker'
+  gem 'mongoid-rspec', github: 'mongoid/mongoid-rspec', ref: '68c95b133be1a1482fe882e39afd33262147d1f4'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-  gem 'mongoid-rspec'
 end
 
 group :development do

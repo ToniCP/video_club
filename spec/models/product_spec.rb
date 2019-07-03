@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+
   context 'fields' do
     it { is_expected.to have_field(:title).of_type(String) }
     it { is_expected.to have_field(:description).of_type(String) }
@@ -18,10 +19,11 @@ RSpec.describe Product, type: :model do
   end
 
   context 'associations' do
-    it { is_expected.to has_many(:line_items) }
-    it { is_expected.to has_many(:comments).dependent(:destroy) }
+    it { is_expected.to have_many :line_items }
+    it { is_expected.to have_many(:comments).with_dependent(:destroy) }
   end
 
+=begin
   context 'callbacks' do
     subject(:product) { FactoryGirl.build(:product) }
   end
@@ -29,5 +31,6 @@ RSpec.describe Product, type: :model do
   context 'scopes' do
     subject(:product) { FactoryGirl.build(:product) }
   end
+=end
 
 end
