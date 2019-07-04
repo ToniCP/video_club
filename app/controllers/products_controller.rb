@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :new, :update, :destroy]
 
   # GET /products
   # GET /products.json
@@ -10,6 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @second_comment = SecondComment.new
   end
 
   # GET /products/new

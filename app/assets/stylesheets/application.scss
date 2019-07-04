@@ -16,6 +16,16 @@
 
  body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
+  html, body{
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  a,a:visited{
+    color: inherit !important;
+    text-decoration: white;
+  }
+
   #banner {
     position: relative;
     min-height: 40px;

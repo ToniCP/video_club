@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @second_comment.user %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @second_comment.product %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @second_comment.body %>
+</p>
+
+<%= link_to 'Edit', edit_second_comment_path(@second_comment) %> |
+<%= link_to 'Back', second_comments_path %>

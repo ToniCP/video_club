@@ -1,3 +1,5 @@
+<h1><%= name_of_the_view %> Product</h1>
+
 <%= form_with(model: product, local: true) do |form| %>
   <% if product.errors.any? %>
     <div id="error_explanation">
@@ -13,17 +15,17 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :product_title %>
+    <%= form.text_field :title, id: :product_title, placeholder: "Enter the title of the movie" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :product_description, rows: 10, cols: 60 %>
+    <%= form.text_area :description, id: :product_description, rows: 10, cols: 60, placeholder: "Enter the description of the movie" %>
   </div>
 
   <div class="field">
     <%= form.label :image_url %>
-    <%= form.text_field :image_url, id: :product_image_url %>
+    <%= form.text_field :image_url, id: :product_image_url, placeholder: "Enter the URL of the image" %>
   </div>
 
   <div class="field">
@@ -33,10 +35,10 @@
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price, id: :product_price, step: :any %>
+    <%= form.number_field :price, id: :product_price, step: :any, placeholder: "Enter the rental price of the movie" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save Movie" %>
   </div>
 <% end %>

@@ -1,13 +1,13 @@
 <%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
   <p>
     <%= form.label :commenter %><br>
-    <%= form.text_field :commenter, :value => current_user.name %>
+    <%= form.text_field :commenter, :value => current_user.name, placeholder: "Enter your name" %>
   </p>
   <p>
     <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, placeholder: "Enter your comment" %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit "Save Comment" %>
   </p>
 <% end %>
