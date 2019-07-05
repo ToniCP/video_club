@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :comment do
-    commenter { Faker::Name.name }
-    body { Faker::Lorem.sentence }
+    user nil
+    product nil
+    body { Faker::Company.catch_phrase }
   end
 end

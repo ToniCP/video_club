@@ -1,6 +1,6 @@
 <p>
   <strong>Commenter:</strong>
-  <%= comment.commenter %>
+  <%= comment.user.name %>
 </p>
 
 <p>
@@ -8,9 +8,10 @@
   <%= comment.body %>
 </p>
 
-<% if user_signed_in? and current_user.role_user == "admin" %>
+<% if current_user.role_user == 'admin' %>
   <p>
-    <%= link_to 'Destroy Comment', [comment.product, comment], method: :delete,
+    <%= link_to 'Destroy Comment', [comment.product, comment],
+    method: :delete,
     data: { confirm: 'Are you sure?' } %>
   </p>
 <% end %>

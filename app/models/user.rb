@@ -25,7 +25,7 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
-  has_many :second_comments
+  has_many :comments
 
   ## Confirmable
   # field :confirmation_token,   type: String
