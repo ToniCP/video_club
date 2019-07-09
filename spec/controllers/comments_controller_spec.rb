@@ -12,37 +12,6 @@ RSpec.describe CommentsController, type: :controller do
 
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "returns a success response" do
-      Comment.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET #show" do
-    it "returns a success response" do
-      comment = Comment.create! valid_attributes
-      get :show, params: {id: comment.to_param}, session: valid_session
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_successful
-    end
-  end
-
-  describe "GET #edit" do
-    it "returns a success response" do
-      comment = Comment.create! valid_attributes
-      get :edit, params: {id: comment.to_param}, session: valid_session
-      expect(response).to be_successful
-    end
-  end
-
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Comment" do
